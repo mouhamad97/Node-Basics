@@ -80,6 +80,12 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+
+/**
+ * list commands
+ *
+ * @returns {void}
+ */
 function help(){
   console.log(`
   1-Hello (it will basically say hello)
