@@ -39,10 +39,13 @@ function onDataReceived(text) {
   }
   else if (text.trim().split(" ")[0] === "hello") {
     hello(text);
-  } 
+  } else if(text === 'list\n'){
+    list();
+  }
   else if(text === 'help\n'){
     help();
   }
+  
   else{
   
     unknownCommand(text);
@@ -70,15 +73,22 @@ function unknownCommand(c){
  */
 function hello(text){
   
- var helloMessage=text.slice(6);
- if(helloMessage.length > 0){
+  var helloMessage=text.slice(6);
+  if(helloMessage.length > 0){
 
-  console.log(text);
+    console.log(text);
 
-console.log(`hello ${helloMessage}`);
- }else{/**added the handling empty state  */
-  console.log('hello')
-  }
+  console.log(`hello ${helloMessage}`);
+  }else{/**added the handling empty state  */
+    console.log('hello')
+    }
+}
+let tasks = ['eating', 'gaming']
+function list(){
+  tasks.forEach((element,index) => {
+    console.log(`${index}-${tasks[index]}`)
+  });
+
 }
 
 
