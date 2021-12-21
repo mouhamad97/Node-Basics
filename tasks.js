@@ -99,7 +99,7 @@ function quit(){
  */
 function help(){
   console.log(`
-  1-Hello (it will basically say hello)
+  1-Hello (it will basically say hello + your name )
   2-quit or exit (well you get the idea)
   `)
 }
