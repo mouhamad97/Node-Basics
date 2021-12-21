@@ -72,7 +72,7 @@ function hello(text){
  var helloMessage=text.slice(6);
  if(helloMessage.length > 1){
 console.log(`hello ${helloMessage}`);
- }else{
+ }else{/**added the handling empty state  */
    console.log(text)
  }
 }
