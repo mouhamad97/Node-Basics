@@ -48,6 +48,9 @@ function onDataReceived(text) {
   else if(text.trim().split(" ")[0] === 'remove'){
     remove(text);
   }
+  else if(text.trim().split(" ")[0] === 'edit'){
+    edit(text);
+  }
   
   else if(text === 'help\n'){
     help();
@@ -129,6 +132,22 @@ function remove(text){
     tasks.pop();
     }
 
+}
+
+function edit(text){
+
+ let editId=text.split(" ")[1];
+ editId = editId.trim();
+ let editValue =text.trim().split(" ")[2];
+  if(editId.length > 0 && typeof(editValue) !='undefined'){
+ 
+    tasks[editId] = text.trim().split(" ")[2];
+
+  }else{
+
+    console.log('Error you need to edit with a number')
+    
+  }
 }
 
 /**
