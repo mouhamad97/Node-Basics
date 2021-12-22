@@ -45,6 +45,10 @@ function onDataReceived(text) {
   else if(text.trim().split(" ")[0] === 'add'){
     add(text);
   }
+  else if(text.trim().split(" ")[0] === 'remove'){
+    remove(text);
+  }
+  
   else if(text === 'help\n'){
     help();
   }
@@ -105,8 +109,20 @@ function add(text){
   }else{
 
     console.log('Error you need to add a task')
+    console.log('remove');
     
   }
+}
+function remove(text){
+
+  var removeIndex=text.slice(5);
+  if(removeIndex.length > 0){
+
+    tasks.splice(removeIndex, 1);
+  }else{/**added the handling empty state  */
+    tasks.pop();
+    }
+
 }
 
 /**
