@@ -42,6 +42,9 @@ function onDataReceived(text) {
   } else if(text === 'list\n'){
     list();
   }
+  else if(text.trim().split(" ")[0] === 'add'){
+    add(text);
+  }
   else if(text === 'help\n'){
     help();
   }
@@ -83,7 +86,8 @@ function hello(text){
     console.log('hello')
     }
 }
-let tasks = ['eating', 'gaming']
+let tasks = ['eating', 'gaming'];
+
 function list(){
   tasks.forEach((element,index) => {
     console.log(`${index}-${tasks[index]}`)
@@ -91,6 +95,19 @@ function list(){
 
 }
 
+function add(text){
+  
+  let addMessage=text.slice(4);
+  if(addMessage.length > 0){
+  tasks.push(addMessage.trim());
+  console.log(addMessage);
+  
+  }else{
+
+    console.log('Error you need to add a task')
+    
+  }
+}
 
 /**
  * Exits the application
