@@ -90,7 +90,7 @@ function hello(text){
     console.log('hello')
     }
 }
-let tasks = ['eating', 'gaming'];
+let tasks = ['eating', 'gaming','spiderman NWH'];
 
 function list(){
   tasks.forEach((element,index) => {
@@ -115,11 +115,17 @@ function add(text){
 }
 function remove(text){
 
-  var removeIndex=text.slice(5);
-  if(removeIndex.length > 0){
+  var removeIndex=text.trim().slice(7);
+  Number(removeIndex);
+  if(removeIndex<0 || removeIndex>tasks.length){
+    console.log('error')
+  }
+ else if(removeIndex> 0){
+  tasks.splice(removeIndex, 1);
 
-    tasks.splice(removeIndex, 1);
-  }else{/**added the handling empty state  */
+}
+  else{/**added the handling empty state  */
+   
     tasks.pop();
     }
 
