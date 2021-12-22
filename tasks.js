@@ -94,10 +94,21 @@ function hello(text){
     }
 }
 let tasks = ['eating', 'gaming','spiderman NWH'];
+let tasksStatus =[true,false,true];
+
+
+
+
 
 function list(){
   tasks.forEach((element,index) => {
-    console.log(`${index}-${tasks[index]}`)
+    if(tasksStatus[index]===true){
+      taskString="[✓]";
+    }else{
+      taskString="[ ]";
+    }
+    console.log(`${index}-${taskString} ${tasks[index]}`)
+
   });
 
 }
@@ -142,6 +153,7 @@ function edit(text){
   if(editId.length > 0 && typeof(editValue) !='undefined'){
  
     tasks[editId] = text.trim().split(" ")[2];
+    
 
   }else{
 
