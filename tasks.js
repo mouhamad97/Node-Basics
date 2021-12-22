@@ -51,6 +51,12 @@ function onDataReceived(text) {
   else if(text.trim().split(" ")[0] === 'edit'){
     edit(text);
   }
+  else if(text.trim().split(" ")[0] === 'check'){
+   check(text);
+  }
+  else if(text.trim().split(" ")[0] === 'uncheck'){
+    uncheck(text)
+  }
   
   else if(text === 'help\n'){
     help();
@@ -161,6 +167,18 @@ function edit(text){
     
   }
 }
+function check(text){
+var taskindex = text.trim().split(" ")[1];
+tasksStatus[taskindex] = true;
+
+}
+
+function uncheck(text){
+  var taskindex = text.trim().split(" ")[1];
+  tasksStatus[taskindex] = false;
+  
+  }
+
 
 /**
  * Exits the application
