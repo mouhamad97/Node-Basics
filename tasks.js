@@ -113,7 +113,10 @@ function list(){
     }else{
       taskString="[ ]";
     }
+   
     console.log(`${index}-${taskString} ${tasks[index]}`)
+  
+    
 
   });
 
@@ -198,7 +201,12 @@ function quit(){
 function help(){
   console.log(`
   1-Hello (it will basically say hello + your name )
-  2-quit or exit (well you get the idea)
+  2-quit or exit (well you get the idea
+  3-remove with no arguments will remove the last element
+  4-remove with the id will remove the element with that index
+  5-add will add a element with a certain text you give
+  6-check with argument will do a check emoji on the task
+  7-unchek with the argument will remove the check emoji on the task )
   `)
 }
 // The following line starts the application
